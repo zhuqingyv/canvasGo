@@ -1,0 +1,31 @@
+{
+  "name": "canvasgo",
+  "version": "1.0.0",
+  "description": "像Vue一样驱动canvas",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuqingyv/canvasGo.git"
+  },
+  "keywords": [
+    "vue-canvas"
+  ],
+  "author": "zhuqingyv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhuqingyv/canvasGo/issues"
+  },
+  "homepage": "https://github.com/zhuqingyv/canvasGo#readme",
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "qs": "^6.9.4",
+    "request": "^2.88.2"
+  }
+}
