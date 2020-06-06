@@ -1,19 +1,19 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 22:19:02
- * @LastEditTime: 2020-06-05 11:28:38
+ * @LastEditTime: 2020-06-06 10:49:32
  * @LastEditors: zhuqingyu
  */ 
 import child from './child.js'
+import child2 from './child2.js'
 export default {
-    "<template>":[
-        {
-            "<div class='app-box'>": [
-                child
-            ]
-        }
+    "<div class='app-box'>":[
+        child,
+        "<span class='text'>",
+        child2
     ],
     "<script>": {
+        name:'App',
         data() {
             return {}
         }

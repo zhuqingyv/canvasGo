@@ -1,7 +1,7 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 17:21:21
- * @LastEditTime: 2020-06-05 11:22:22
+ * @LastEditTime: 2020-06-06 10:39:54
  * @LastEditors: zhuqingyu
  */
 import cssMap from './cssMap/cssMap.js'
@@ -10,6 +10,5 @@ class CSS {
         this._data = data
         this.cssMap = cssMap
     }
-    getComputedStyle(element) {}
 }
 export default CSS

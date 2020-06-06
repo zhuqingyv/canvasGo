@@ -1,11 +1,11 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 22:41:02
- * @LastEditTime: 2020-06-04 22:45:27
+ * @LastEditTime: 2020-06-05 14:28:38
  * @LastEditors: zhuqingyu
  */ 
 const elementMap = {
-    block: {
+    Block: {
         'div': 1,
         'p': 1,
         'audio': 1,
@@ -13,10 +13,11 @@ const elementMap = {
         'ul': 1,
         'li': 1
     },
-    inline: {
+    Inline: {
         'span': 1,
         'a': 1,
         'img': 1
         // 'code': 1
     }
 }
+export default elementMap

@@ -1,15 +1,16 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 22:19:02
- * @LastEditTime: 2020-06-05 13:01:53
+ * @LastEditTime: 2020-06-06 10:49:13
  * @LastEditors: zhuqingyu
- */ 
+ */
+import child from './child.js'
 export default {
-    "<div class='child-box'>":[
-        
+    "<div class='child2-box'>":[
+        child
     ],
     "<script>": {
-        name: 'child',
+        name: 'child2',
         data() {
             return {}
         }
