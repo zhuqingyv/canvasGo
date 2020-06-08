@@ -1,7 +1,7 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 22:19:02
- * @LastEditTime: 2020-06-06 10:49:32
+ * @LastEditTime: 2020-06-07 08:42:29
  * @LastEditors: zhuqingyu
  */ 
 import child from './child.js'
@@ -18,7 +18,7 @@ export default {
             return {}
         }
     },
-    "<style>": {
+    "<style scoped>": {
         '.app-box': {
             'width':100,
             'height:': 100,

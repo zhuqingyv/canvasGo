@@ -1,16 +1,16 @@
 /*
  * @Author: zhuqingyu
  * @Date: 2020-06-04 17:21:14
- * @LastEditTime: 2020-06-06 11:49:20
+ * @LastEditTime: 2020-06-07 08:57:57
  * @LastEditors: zhuqingyu
  */
 import Block from './block/block.js'
 import Inline from './inline/inline.js'
 import ElementMap from './elementMap/elementMap.js'
 import DomTree from './domTree/domTree.js'
-import Event from '../eventTool/eventTool.js'
+import Event from '../../common/Event/event.js'
 class DOCUMENT {
-    constructor(data, css) {
+    constructor(data) {
         this.type = 'document'
         this._data = data // 元素信息
         this.Block = Block // 快级元素
@@ -28,6 +28,7 @@ class DOCUMENT {
     buildDom(data, parent) {
         let element = Object.create(null)
         let _children
+        element.children = []
         if(typeof data === 'string') {
             let info = this.getDomInfo(data)
             let displayType = this.ElementMap.Block[info.type] ? 'block' : this.ElementMap.Inline[info.type] ? 'inline' : null
@@ -56,6 +57,7 @@ class DOCUMENT {
                 } else if(info.type === 'style') {
                     /* 样式 */
                     element.style = data[key]
+                    element.style.scoped = info.scoped
                 } else if(info.type === 'script') {
                     /* 脚本 */
                     element.script = data[key]
@@ -81,16 +83,19 @@ class DOCUMENT {
         let endIndex = str.search(/\>/);
         let center = str.substring(startIndex, endIndex)
         let className = []
+        let scoped
         center = center.split(' ')
         center.forEach(string => {
             if(string.search(/class\=/) !== -1) {
                 className.push(string.substring(string.search(/\=/) +2, string.length - 1).split(' '))
             }
         })
+        scoped = center.some(o => o === 'style') && center.some(o => o === 'scoped') ? true : undefined
         /* 获取class名 */
         return {
             type: center[0], // 标签名例如：div
-            class: className
+            class: className,
+            scoped: scoped
         }
     }
     mixCSS() {}
